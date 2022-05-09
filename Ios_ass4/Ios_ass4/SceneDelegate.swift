@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         //show the first page of product
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ProductVC()
+        window.rootViewController = ProductListVC()
         window.makeKeyAndVisible()
         self.window = window
     }
