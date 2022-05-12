@@ -24,6 +24,10 @@ class ProductListCell: UITableViewCell {
         hStack.translatesAutoresizingMaskIntoConstraints = false
         hStack.spacing = 8
         hStack.alignment = .center
+        hStack.layer.cornerRadius = 6
+        hStack.layer.masksToBounds = true
+        hStack.layer.borderColor = UIColor.systemGray5.cgColor
+        hStack.layer.borderWidth = 1
         contentView.addSubview(hStack)
         
         coverView = UIImageView()
