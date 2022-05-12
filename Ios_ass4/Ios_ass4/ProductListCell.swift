@@ -18,9 +18,12 @@ class ProductListCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        selectionStyle = .none //cell can not be select
+        
         let hStack = UIStackView() //Horizontal stack view
         hStack.translatesAutoresizingMaskIntoConstraints = false
         hStack.spacing = 8
+        hStack.alignment = .center
         contentView.addSubview(hStack)
         
         coverView = UIImageView()
@@ -32,6 +35,7 @@ class ProductListCell: UITableViewCell {
             hStack.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 15),
             hStack.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15),
             hStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+//            hStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5), //if use autolayout 
             coverView.widthAnchor.constraint(equalToConstant: 100),
             coverView.heightAnchor.constraint(equalToConstant: 100)
         ])
@@ -66,8 +70,8 @@ class ProductListCell: UITableViewCell {
         
         collectButton = UIButton()
         collectButton.tintColor = .systemRed
-        collectButton.setImage(UIImage(systemName: "herat"), for: .normal)
-        collectButton.setImage(UIImage(systemName: "herat.fill"), for: .selected)
+        collectButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        collectButton.setImage(UIImage(systemName: "heart.fill"), for: .selected)
         priceHstack.addArrangedSubview(collectButton)
         
     }
@@ -77,7 +81,7 @@ class ProductListCell: UITableViewCell {
     }
     
     func setCover(_ cover: String){
-        coverView.image = UIImage(systemName: "heart")
+        coverView.image = UIImage(systemName: "heart.fill")
     }
     
     func setName(_ name: String){

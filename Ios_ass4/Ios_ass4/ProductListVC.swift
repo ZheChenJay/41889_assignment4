@@ -17,7 +17,9 @@ class ProductListVC: UIViewController {
         
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false // Automatic layout
-        tableView.register(ProductListCell.self, forCellReuseIdentifier: ProductListCell.description()
+        tableView.rowHeight = 110 // set cell height
+        tableView.separatorStyle = .none // no separator line
+        tableView.register(ProductListCell.self, forCellReuseIdentifier: ProductListCell.description()// register a cell
         )
         tableView.dataSource = self
         tableView.delegate = self
@@ -42,11 +44,11 @@ extension ProductListVC: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductListCell.description(), for: indexPath) as! ProductListCell
+//        cell.textLabel?.text = indexPath.description
         cell.setCover("")
         cell.setName("Name")
         cell.setPrice(100)
         cell.setCollect(true)
-        cell.textLabel?.text = indexPath.description
         return cell
     }
 }
