@@ -13,11 +13,12 @@ class ProductListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false // Automatic layout
-        tableView.register(ProductListCell.self, forCellReuseIdentifier: ProductListCell.description())
+        tableView.register(ProductListCell.self, forCellReuseIdentifier: ProductListCell.description()
+        )
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)

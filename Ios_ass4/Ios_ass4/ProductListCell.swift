@@ -59,6 +59,7 @@ class ProductListCell: UITableViewCell {
         let priceHstack = UIStackView()
         vStack.addArrangedSubview(priceHstack)
         
+        priceLabel = UILabel()
         priceLabel.font = .boldSystemFont(ofSize: 24)
         priceLabel.textColor = .systemPink
         priceHstack.addArrangedSubview(priceLabel)
@@ -84,7 +85,7 @@ class ProductListCell: UITableViewCell {
     }
     
     func setPrice(_ price: Double){
-        priceLabel.text = String(format: "%.2f",price)
+        priceLabel.text = String(format: "$%.2f",price)
     }
     
     func setCollect(_ collect:Bool){
