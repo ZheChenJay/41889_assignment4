@@ -3,7 +3,8 @@ platform :ios, '15.4'
 
 target 'Ios_ass4' do
   use_frameworks!
-  pod 'MJRefresh'  
+  pod 'MJRefresh'
+  pod 'Alamofire'
 
   # Pods for Ios_ass4
 

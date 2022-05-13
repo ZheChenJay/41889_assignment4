@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class ProductListVC: UIViewController {
     
@@ -30,8 +31,17 @@ class ProductListVC: UIViewController {
             tableView.leftAnchor.constraint(equalTo:view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo:view.rightAnchor),
             tableView.topAnchor.constraint(equalTo:view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo:view.bottomAnchor)])
-
+            tableView.bottomAnchor.constraint(equalTo:view.bottomAnchor)
+        ])
+        let header = MJRefreshNormalHeader{
+            print("refresh") //test refresh
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                self.tableView.mj_header?.endRefreshing()
+            }
+        }
+        header.stateLabel?.isHidden = true
+        header.lastUpdatedTimeLabel?.isHidden = true
+        tableView.mj_header = header
     }
 
 
@@ -44,11 +54,22 @@ extension ProductListVC: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductListCell.description(), for: indexPath) as! ProductListCell
-//        cell.textLabel?.text = indexPath.description
+
+        
+        // cell.textLabel?.text = indexPath.description
+        
         cell.setCover("")
-        cell.setName("Name")
-        cell.setPrice(100)
-        cell.setCollect(true)
+        if indexPath.row % 2 == 0{
+            cell.setName("Name")
+            cell.setRating(3)
+            cell.setPrice(100)
+            cell.setCollect(true)
+        }else{
+            cell.setName(String(repeating:"Name ", count:20))
+            cell.setRating(4)
+            cell.setPrice(1234567.123)
+            cell.setCollect(false)
+        }
         return cell
     }
 }

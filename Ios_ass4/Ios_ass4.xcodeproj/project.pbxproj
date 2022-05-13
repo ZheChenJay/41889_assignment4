@@ -50,7 +50,6 @@
 				DDC62BDB81EDD7D1A089B51B /* Pods-Ios_ass4.debug.xcconfig */,
 				11E15761983B97B193175A7F /* Pods-Ios_ass4.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

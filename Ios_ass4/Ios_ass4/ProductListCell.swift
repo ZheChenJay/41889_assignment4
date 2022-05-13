@@ -11,7 +11,7 @@ class ProductListCell: UITableViewCell {
 
     private var coverView: UIImageView!
     private var nameLabel: UILabel!
-    private var ratingView: UIView!
+    private var ratingView: RatingView!
     private var priceLabel: UILabel!
     private var collectButton: UIButton!
     
@@ -47,6 +47,7 @@ class ProductListCell: UITableViewCell {
         let vStack = UIStackView()
         vStack.axis = .vertical
         vStack.spacing = 6
+        vStack.alignment = .leading
         hStack.addArrangedSubview(vStack)
         
         nameLabel = UILabel()
@@ -54,15 +55,14 @@ class ProductListCell: UITableViewCell {
         nameLabel.textColor = .black
         vStack.addArrangedSubview(nameLabel)
         
-        ratingView = UIView()
-        ratingView.backgroundColor = .systemOrange
+        ratingView = RatingView()
         vStack.addArrangedSubview(ratingView)
         
-        //临时约束ratingView 做好星号的时候可以移除，暂时用于占位置
-        NSLayoutConstraint.activate([
-            ratingView.widthAnchor.constraint(equalToConstant: 100),
-            ratingView.heightAnchor.constraint(equalToConstant: 20)
-        ])
+//        //临时约束ratingView 做好星号的时候可以移除，暂时用于占位置
+//        NSLayoutConstraint.activate([
+//            ratingView.widthAnchor.constraint(equalToConstant: 100),
+//            ratingView.heightAnchor.constraint(equalToConstant: 20)
+//        ])
         
         let priceHstack = UIStackView()
         vStack.addArrangedSubview(priceHstack)
@@ -78,6 +78,8 @@ class ProductListCell: UITableViewCell {
         collectButton.setImage(UIImage(systemName: "heart.fill"), for: .selected)
         priceHstack.addArrangedSubview(collectButton)
         
+        collectButton.leftAnchor.constraint(equalTo: vStack.rightAnchor, constant: -32).isActive = true
+        
     }
     
     required init?(coder: NSCoder) {
@@ -90,6 +92,10 @@ class ProductListCell: UITableViewCell {
     
     func setName(_ name: String){
         nameLabel.text = name
+    }
+    
+    func setRating(_ rating: Int){
+        ratingView.rating = rating
     }
     
     func setPrice(_ price: Double){

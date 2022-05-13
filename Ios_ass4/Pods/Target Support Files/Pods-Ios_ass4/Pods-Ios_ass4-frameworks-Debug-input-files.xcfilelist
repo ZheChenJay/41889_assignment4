@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Ios_ass4/Pods-Ios_ass4-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
