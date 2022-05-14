@@ -10,6 +10,7 @@
 		4D04A5F9959E78CF913E8B7B /* Pods_Ios_ass4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E72CEDB96840358102045A5 /* Pods_Ios_ass4.framework */; };
 		E1E2F1F9282FF6D400091464 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2F1F8282FF6D300091464 /* ProductDetailVC.swift */; };
 		FA410AA0282D41DE0099CBA8 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA410A9F282D41DE0099CBA8 /* RatingView.swift */; };
+		FA51ACE2282FFAF50095C7E5 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51ACE1282FFAF50095C7E5 /* ProductDetailVC.swift */; };
 		FA7D9E912829088F006CD122 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D9E902829088F006CD122 /* AppDelegate.swift */; };
 		FA7D9E932829088F006CD122 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D9E922829088F006CD122 /* SceneDelegate.swift */; };
 		FA7D9E952829088F006CD122 /* ProductListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D9E942829088F006CD122 /* ProductListVC.swift */; };
@@ -26,6 +27,7 @@
 		DDC62BDB81EDD7D1A089B51B /* Pods-Ios_ass4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ios_ass4.debug.xcconfig"; path = "Target Support Files/Pods-Ios_ass4/Pods-Ios_ass4.debug.xcconfig"; sourceTree = "<group>"; };
 		E1E2F1F8282FF6D300091464 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		FA410A9F282D41DE0099CBA8 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		FA51ACE1282FFAF50095C7E5 /* ProductDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		FA7D9E8D2829088F006CD122 /* Ios_ass4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ios_ass4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7D9E902829088F006CD122 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA7D9E922829088F006CD122 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				FA7D9E902829088F006CD122 /* AppDelegate.swift */,
 				FA7D9E922829088F006CD122 /* SceneDelegate.swift */,
 				FA7D9E942829088F006CD122 /* ProductListVC.swift */,
+				FA51ACE1282FFAF50095C7E5 /* ProductDetailVC.swift */,
 				FA7D9EA428291078006CD122 /* ProductListCell.swift */,
 				FA410A9F282D41DE0099CBA8 /* RatingView.swift */,
 				FA9A310A282F81D700D39A66 /* NetworkAPI.swift */,
@@ -224,6 +227,7 @@
 				FA7D9E932829088F006CD122 /* SceneDelegate.swift in Sources */,
 				E1E2F1F9282FF6D400091464 /* ProductDetailVC.swift in Sources */,
 				FA9A310B282F81D700D39A66 /* NetworkAPI.swift in Sources */,
+				FA51ACE2282FFAF50095C7E5 /* ProductDetailVC.swift in Sources */,
 				FA9A310D282F84AF00D39A66 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
