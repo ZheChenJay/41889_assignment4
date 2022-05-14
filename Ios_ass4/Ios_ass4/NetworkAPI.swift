@@ -13,8 +13,8 @@ private let BaseUrl = "https://raw.githubusercontent.com/ZheChenJay/API-product/
 
 class NetworkAPI {
 
-    static func homeProductList(completion: @escaping (Result<[Product], Error>) -> Void){
-        AF.request(BaseUrl + "iphone_1.json").responseData { response in //request data from URL
+    static func homeProductList(completion: @escaping (Result<[Product], Error>) -> Void) {
+        AF.request(BaseUrl + "iPhone_1.json").responseData { response in //request data from Json
             switch response.result {
             case let .success(data):
                 if let list = try? JSONDecoder().decode([Product].self, from: data){
@@ -33,6 +33,6 @@ class NetworkAPI {
 
 extension UIImageView {
     func sh_setImage(name: String){
-        sd_setImage(with: URL(string: BaseUrl + "image/" + name))
+        sd_setImage(with: URL(string: BaseUrl + "Image/" + name))
     }
 }

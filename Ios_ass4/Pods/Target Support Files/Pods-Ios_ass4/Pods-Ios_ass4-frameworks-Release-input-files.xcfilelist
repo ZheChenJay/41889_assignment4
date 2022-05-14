@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Ios_ass4/Pods-Ios_ass4-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
+${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

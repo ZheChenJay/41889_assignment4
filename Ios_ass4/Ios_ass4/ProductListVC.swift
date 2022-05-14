@@ -7,6 +7,7 @@
 
 import UIKit
 import MJRefresh
+import PKHUD
 
 class ProductListVC: UIViewController {
     
@@ -32,10 +33,11 @@ class ProductListVC: UIViewController {
         NSLayoutConstraint.activate([
             tableView.leftAnchor.constraint(equalTo:view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo:view.rightAnchor),
-            tableView.topAnchor.constraint(equalTo:view.topAnchor),
+            tableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo:view.bottomAnchor)
         ])
-        let header = MJRefreshNormalHeader{
+        let header = MJRefreshNormalHeader{ [weak self] in // [weak self] aviod circular reference
+            guard let self = self else { return }
             self.refreshData()
         }
         header.stateLabel?.isHidden = true
@@ -45,7 +47,8 @@ class ProductListVC: UIViewController {
         tableView.mj_header?.beginRefreshing()
     }
     func refreshData(){
-        NetworkAPI.homeProductList { result in
+        NetworkAPI.homeProductList { [weak self] result in // similar as MJ
+            guard let self = self else { return }
             
             self.tableView.mj_header?.endRefreshing()
             
@@ -53,7 +56,8 @@ class ProductListVC: UIViewController {
             case let .success(list):
                 self.list = list
                 self.tableView.reloadData()
-            case let .failure(error): print("fail: \(error.localizedDescription)")
+            case let .failure(error):
+                HUD.flash(.label(error.localizedDescription), delay: 5) // error pop
             }
         }
     }
@@ -82,5 +86,9 @@ extension ProductListVC: UITableViewDataSource{
 }
 
 extension ProductListVC:UITableViewDelegate{ // uitabkeview agent
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let product = list[indexPath.row]
+        let vc = ProductDetailVC(product: product)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

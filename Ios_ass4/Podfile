@@ -6,6 +6,7 @@ target 'Ios_ass4' do
   pod 'MJRefresh'
   pod 'Alamofire'
   pod 'SDWebImage'
+  pod 'PKHUD'
 
   # Pods for Ios_ass4
 
