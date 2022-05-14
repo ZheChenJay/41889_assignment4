@@ -34,16 +34,23 @@ class ProductListVC: UIViewController {
             tableView.bottomAnchor.constraint(equalTo:view.bottomAnchor)
         ])
         let header = MJRefreshNormalHeader{
-            print("refresh") //test refresh
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-                self.tableView.mj_header?.endRefreshing()
-            }
+            self.refreshData()
         }
         header.stateLabel?.isHidden = true
         header.lastUpdatedTimeLabel?.isHidden = true
         tableView.mj_header = header
     }
-
+    func refreshData(){
+        NetworkAPI.homeProductList { result in
+            
+            self.tableView.mj_header?.endRefreshing()
+            
+            switch result {
+            case let .success(list): print("success")
+            case let .failure(error): print("fail: \(error.localizedDescription)")
+            }
+        }
+    }
 
 }
 
