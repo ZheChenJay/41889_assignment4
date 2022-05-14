@@ -10,6 +10,8 @@ import MJRefresh
 
 class ProductListVC: UIViewController {
     
+    var list: [Product] = []
+    
     private var tableView:UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,8 @@ class ProductListVC: UIViewController {
         header.stateLabel?.isHidden = true
         header.lastUpdatedTimeLabel?.isHidden = true
         tableView.mj_header = header
+        
+        tableView.mj_header?.beginRefreshing()
     }
     func refreshData(){
         NetworkAPI.homeProductList { result in
@@ -46,7 +50,9 @@ class ProductListVC: UIViewController {
             self.tableView.mj_header?.endRefreshing()
             
             switch result {
-            case let .success(list): print("success")
+            case let .success(list):
+                self.list = list
+                self.tableView.reloadData()
             case let .failure(error): print("fail: \(error.localizedDescription)")
             }
         }
@@ -56,27 +62,21 @@ class ProductListVC: UIViewController {
 
 extension ProductListVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int{
-        20
+        list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let product = list[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductListCell.description(), for: indexPath) as! ProductListCell
 
         
         // cell.textLabel?.text = indexPath.description
         
         cell.setCover("")
-        if indexPath.row % 2 == 0{
-            cell.setName("Name")
-            cell.setRating(3)
-            cell.setPrice(100)
-            cell.setCollect(true)
-        }else{
-            cell.setName(String(repeating:"Name ", count:20))
-            cell.setRating(4)
-            cell.setPrice(1234567.123)
-            cell.setCollect(false)
-        }
+        cell.setName(product.name)
+        cell.setRating(product.rating)
+        cell.setPrice(product.price)
+        cell.setCollect(true)
         return cell
     }
 }
