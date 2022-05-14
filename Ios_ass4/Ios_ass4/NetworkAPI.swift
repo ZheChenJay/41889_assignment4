@@ -7,10 +7,12 @@
 
 import UIKit
 import Alamofire //network third-party library
+import SDWebImage
 
 private let BaseUrl = "https://raw.githubusercontent.com/ZheChenJay/API-product/main/API/Shopping/"
 
 class NetworkAPI {
+
     static func homeProductList(completion: @escaping (Result<[Product], Error>) -> Void){
         AF.request(BaseUrl + "iphone_1.json").responseData { response in //request data from URL
             switch response.result {
@@ -26,5 +28,11 @@ class NetworkAPI {
             }
             
         }
+    }
+}
+
+extension UIImageView {
+    func sh_setImage(name: String){
+        sd_setImage(with: URL(string: BaseUrl + "image/" + name))
     }
 }

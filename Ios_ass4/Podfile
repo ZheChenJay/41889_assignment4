@@ -5,6 +5,7 @@ target 'Ios_ass4' do
   use_frameworks!
   pod 'MJRefresh'
   pod 'Alamofire'
+  pod 'SDWebImage'
 
   # Pods for Ios_ass4
 

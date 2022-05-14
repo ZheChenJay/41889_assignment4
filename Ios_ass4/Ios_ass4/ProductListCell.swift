@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ProductListCell: UITableViewCell {
 
     private var coverView: UIImageView!
@@ -87,7 +88,7 @@ class ProductListCell: UITableViewCell {
     }
     
     func setCover(_ cover: String){
-        coverView.image = UIImage(systemName: "heart.fill")
+        coverView.sh_setImage(name: cover)
     }
     
     func setName(_ name: String){

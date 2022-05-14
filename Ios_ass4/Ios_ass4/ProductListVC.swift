@@ -72,7 +72,7 @@ extension ProductListVC: UITableViewDataSource{
         
         // cell.textLabel?.text = indexPath.description
         
-        cell.setCover("")
+        cell.setCover(product.cover)
         cell.setName(product.name)
         cell.setRating(product.rating)
         cell.setPrice(product.price)
