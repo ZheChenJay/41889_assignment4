@@ -21,10 +21,22 @@ class ProductCollectManager {
     
     private let lock = DispatchSemaphore(value: 1) //Thread blocking processing
     
+    private var subscribeList: [SubscribeItem] = []
+    
     private var dataUrl: URL {
         var url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         url.appendPathComponent("favouriteProduct.json")
         return url
+    }
+    
+    func subscribe(_ action: @escaping (product) -> void)) -> String {
+        let item = SubscribeItem(key: UUID().uuidString, acting:action) // every time subscribe creat a id
+        subscribeList,append(item)
+        return item.key //unique key
+    }
+
+    func unsubscribe(_ key: String){
+        subscribeList = subscribeList.filter { $0.key != key}
     }
 
     
@@ -71,6 +83,9 @@ class ProductCollectManager {
         let list = self.list // Copy the list to the child counties to avoid threading errors
         DispatchQueue.global().async{ //save in disk
             self.saveDataSync(list)
+        }
+        for item in subscribeList {
+            item.action(product)
         }
     }
     
