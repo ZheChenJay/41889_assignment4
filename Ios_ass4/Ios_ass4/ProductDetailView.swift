@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol ProductDetailViewDelegate: AnyObject{
+    func ProductDetailViewDidClickCollect(_ detailView: ProductDetailView)
+}
+
 class ProductDetailView: UIView {
+    
+    weak var delegate: ProductDetailViewDelegate?
     
     private var cycleview: CycleView!
     private var nameLabel: UILabel!
@@ -65,6 +71,7 @@ class ProductDetailView: UIView {
         collectButton.tintColor = .systemRed
         collectButton.setImage(UIImage(systemName: "heart"), for: .normal)
         collectButton.setImage(UIImage(systemName: "heart.fill"), for: .selected)
+        collectButton.addTarget(self, action: #selector(clickCollect), for: .touchUpInside)
         hStack.addArrangedSubview(collectButton)
         
         collectButton.setContentHuggingPriority(.required, for: .horizontal) // aviod tensile
@@ -101,4 +108,7 @@ class ProductDetailView: UIView {
         collectButton.isSelected = collect
     }
     
+    @objc private func clickCollect(){
+        delegate?.ProductDetailViewDidClickCollect(self)
+    }
 }

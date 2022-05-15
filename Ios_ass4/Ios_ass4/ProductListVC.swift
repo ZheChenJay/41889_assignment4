@@ -75,12 +75,13 @@ extension ProductListVC: UITableViewDataSource{
 
         
         // cell.textLabel?.text = indexPath.description
-        
+        cell.delegate = self
         cell.setCover(product.cover)
         cell.setName(product.name)
         cell.setRating(product.rating)
         cell.setPrice(product.price)
         cell.setCollect(true)
+        cell.setCollect(ProductCollectManager.shared.checkCollect(product))
         return cell
     }
 }
@@ -90,5 +91,14 @@ extension ProductListVC:UITableViewDelegate{ // uitabkeview agent
         let product = list[indexPath.row]
         let vc = ProductDetailVC(product: product)
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension ProductListVC: ProductListCellDelegate{
+    func productListCellDidClickCollect(_ cell: ProductListCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let product = list[indexPath.row]
+        ProductCollectManager.shared.collectProduct(product)
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }

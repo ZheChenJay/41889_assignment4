@@ -38,11 +38,12 @@ class ProductDetailVC: UIViewController {
         view.addSubview(tableView)
         
         detailView = ProductDetailView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 0))
+        detailView.delegate = self
         detailView.setimages(product.images)
         detailView.setName(product.name)
         detailView.setRating(product.rating)
         detailView.setPrice(product.price)
-        detailView.setCollect(true)
+        detailView.setCollect(ProductCollectManager.shared.checkCollect(product))
         detailView.layoutIfNeeded()
         tableView.tableHeaderView = detailView
         
@@ -85,5 +86,12 @@ extension ProductDetailVC: UITableViewDataSource{
 extension ProductDetailVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         HUD.flash(.labeledSuccess(title: "clcik the commend", subtitle: indexPath.description), delay:2)
+    }
+}
+
+extension ProductDetailVC: ProductDetailViewDelegate{
+    func ProductDetailViewDidClickCollect(_ cell: ProductDetailView) {
+        ProductCollectManager.shared.collectProduct(product)
+        detailView.setCollect(ProductCollectManager.shared.checkCollect(product))
     }
 }

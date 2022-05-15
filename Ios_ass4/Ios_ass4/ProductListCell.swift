@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol ProductListCellDelegate: AnyObject{
+    func productListCellDidClickCollect(_ cell: ProductListCell)
+}
 
 class ProductListCell: UITableViewCell {
-
+    
+    weak var delegate: ProductListCellDelegate?
+    
     private var coverView: UIImageView!
     private var nameLabel: UILabel!
     private var ratingView: RatingView!
@@ -77,6 +82,7 @@ class ProductListCell: UITableViewCell {
         collectButton.tintColor = .systemRed
         collectButton.setImage(UIImage(systemName: "heart"), for: .normal)
         collectButton.setImage(UIImage(systemName: "heart.fill"), for: .selected)
+        collectButton.addTarget(self, action: #selector(clickCollect), for: .touchUpInside)
         priceHstack.addArrangedSubview(collectButton)
         
         collectButton.leftAnchor.constraint(equalTo: vStack.rightAnchor, constant: -32).isActive = true
@@ -105,5 +111,9 @@ class ProductListCell: UITableViewCell {
     
     func setCollect(_ collect:Bool){
         collectButton.isSelected = collect
+    }
+    
+    @objc private func clickCollect(){
+        delegate?.productListCellDidClickCollect(self)
     }
 }
