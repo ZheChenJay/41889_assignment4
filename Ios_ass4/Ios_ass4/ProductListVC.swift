@@ -14,6 +14,10 @@ class ProductListVC: UIViewController {
     var list: [Product] = []
     
     private var tableView:UITableView!
+    
+    private var subscribeKey: String = ""
+    
+    deinit { ProuctCollectManager.shared.unsubscribe(subscribeKey) }
     override func viewDidLoad() {
         super.viewDidLoad()
          
@@ -45,6 +49,13 @@ class ProductListVC: UIViewController {
         tableView.mj_header = header
         
         tableView.mj_header?.beginRefreshing()
+        
+        subscribeKey = ProductCollectManager.shared.subscribe{[weak self] product in
+            guard let self = self else { return }
+            if let index = self.list.firstIndex(where: { $0.id == product.id}){
+                self.tableView.reloadRows(at: [IndexPath(row:row, section:0)], with: .none)
+            }
+        }
     }
     func refreshData(){
         NetworkAPI.homeProductList { [weak self] result in // similar as MJ
@@ -99,6 +110,6 @@ extension ProductListVC: ProductListCellDelegate{
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         let product = list[indexPath.row]
         ProductCollectManager.shared.collectProduct(product)
-        tableView.reloadRows(at: [indexPath], with: .none)
+
     }
 }
