@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class ProductDetailVC: UIViewController {
 
@@ -83,6 +84,6 @@ extension ProductDetailVC: UITableViewDataSource{
 
 extension ProductDetailVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(#function)
+        HUD.flash(.labeledSuccess(title: "clcik the commend", subtitle: indexPath.description), delay:2)
     }
 }
