@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         //show the first page of product
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UINavigationController(rootViewController: ProductListVC())
+        window.rootViewController = TabBarControler()
         window.makeKeyAndVisible()
         self.window = window
     }
