@@ -15,6 +15,10 @@ class ProductDetailVC: UIViewController {
     private var detailView: ProductDetailView!
     private var tableView: UITableView!
     
+    private var subscribeKey: String = ""
+    
+    deinit { ProductCollectManager.shared.unsubscribe(subscribeKey) }
+    
     init(product: Product){
         self.product = product
         super.init(nibName: nil, bundle: nil)
@@ -54,9 +58,18 @@ class ProductDetailVC: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         
-        
+        subscribeKey = ProductCollectManager.shared.subscribe{ [weak self] product in
+            guard let self = self else {return}
+            
+            if product.id == self.product.id{
+                self.detailView.setCollect(ProductCollectManager.shared.checkCollect(product))
+            }
+        }
     }
-
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        detailView.layoutIfNeeded()
+    }
 }
 
 extension ProductDetailVC: UITableViewDataSource{
@@ -92,6 +105,5 @@ extension ProductDetailVC: UITableViewDelegate{
 extension ProductDetailVC: ProductDetailViewDelegate{
     func ProductDetailViewDidClickCollect(_ cell: ProductDetailView) {
         ProductCollectManager.shared.collectProduct(product)
-        detailView.setCollect(ProductCollectManager.shared.checkCollect(product))
     }
 }
