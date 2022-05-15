@@ -29,9 +29,9 @@ class ProductCollectManager {
         return url
     }
     
-    func subscribe(_ action: @escaping (product) -> void)) -> String {
-        let item = SubscribeItem(key: UUID().uuidString, acting:action) // every time subscribe creat a id
-        subscribeList,append(item)
+    func subscribe(_ action: @escaping (Product) -> Void) -> String {
+        let item = SubscribeItem(key: UUID().uuidString, action: action) // every time subscribe creat a id
+        subscribeList.append(item)
         return item.key //unique key
     }
 

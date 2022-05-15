@@ -17,7 +17,7 @@ class ProductListVC: UIViewController {
     
     private var subscribeKey: String = ""
     
-    deinit { ProuctCollectManager.shared.unsubscribe(subscribeKey) }
+    deinit { ProductCollectManager.shared.unsubscribe(subscribeKey) }
     override func viewDidLoad() {
         super.viewDidLoad()
          
@@ -50,10 +50,11 @@ class ProductListVC: UIViewController {
         
         tableView.mj_header?.beginRefreshing()
         
-        subscribeKey = ProductCollectManager.shared.subscribe{[weak self] product in
+        subscribeKey = ProductCollectManager.shared.subscribe{ [weak self] product in
             guard let self = self else { return }
-            if let index = self.list.firstIndex(where: { $0.id == product.id}){
-                self.tableView.reloadRows(at: [IndexPath(row:row, section:0)], with: .none)
+            
+            if let row = self.list.firstIndex(where: { $0.id == product.id}){
+                self.tableView.reloadRows(at: [IndexPath(row: row, section:0)], with: .none)
             }
         }
     }
