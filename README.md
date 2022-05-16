@@ -13,12 +13,11 @@ The contribution of this project:
 ## Table of Contents
 - [Product Browsing](#product browsing)
 - [Product Detailed Page](#product detailed page)
-	- [Product Evaluation Browsing](#product evaluation browsing)
+	- Product Evaluation Browsing
 - [Product Collection](#product collection)
 - [Development Cycle](#development Cycle)
--[product](#product)
 
-## Commodity Browsing
+## Product Browsing
 On this page, product list has been shown. Through the way of sliding down, more product will be appeared.
 
 Each product has a name, price, rating, picture of the item and a favorite button. The above data is from Amazon.
