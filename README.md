@@ -11,11 +11,12 @@ The contribution of this project:
 | Bingzhen He     |  Bingzhen.He-1@student.uts.edu.au   | 			        |
 
 ## Table of Contents
-- [Product Browsing](#commodity browsing)
-- [Product Detailed Page](#commodity detailed page)
-	- [Product Evaluation Browsing](#commodity evaluation browsing)
+- [Product Browsing](#product browsing)
+- [Product Detailed Page](#product detailed page)
+	- [Product Evaluation Browsing](#product evaluation browsing)
 - [Product Collection](#product collection)
 - [Development Cycle](#development Cycle)
+-[product](#product)
 
 ## Commodity Browsing
 On this page, product list has been shown. Through the way of sliding down, more product will be appeared.
