@@ -13,7 +13,7 @@ class ProductListVC: UIViewController {
     
     var list: [Product] = []
     
-    private var tableView:UITableView!
+    private(set) var tableView : UITableView!
     
     private var subscribeKey: String = ""
     
@@ -40,13 +40,8 @@ class ProductListVC: UIViewController {
             tableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo:view.bottomAnchor)
         ])
-        let header = MJRefreshNormalHeader{ [weak self] in // [weak self] aviod circular reference
-            guard let self = self else { return }
-            self.refreshData()
-        }
-        header.stateLabel?.isHidden = true
-        header.lastUpdatedTimeLabel?.isHidden = true
-        tableView.mj_header = header
+        
+        setupRefreshHeader()
         
         tableView.mj_header?.beginRefreshing()
         
@@ -58,6 +53,17 @@ class ProductListVC: UIViewController {
             }
         }
     }
+    
+    func setupRefreshHeader(){
+        let header = MJRefreshNormalHeader{ [weak self] in // [weak self] aviod circular reference
+            guard let self = self else { return }
+            self.refreshData()
+        }
+        header.stateLabel?.isHidden = true
+        header.lastUpdatedTimeLabel?.isHidden = true
+        tableView.mj_header = header
+    }
+    
     func refreshData(){
         NetworkAPI.homeProductList { [weak self] result in // similar as MJ
             guard let self = self else { return }
