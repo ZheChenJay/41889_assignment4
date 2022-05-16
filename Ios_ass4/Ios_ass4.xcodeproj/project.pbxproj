@@ -23,6 +23,7 @@
 		FA9A310D282F84AF00D39A66 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A310C282F84AF00D39A66 /* Product.swift */; };
 		FAEBF3542830D08900A9D491 /* TabBarControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEBF3532830D08900A9D491 /* TabBarControler.swift */; };
 		FAEBF3562830D78300A9D491 /* ProductCollectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEBF3552830D78300A9D491 /* ProductCollectManager.swift */; };
+		FAEBF35C283207A100A9D491 /* ProductCollectListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEBF35B283207A100A9D491 /* ProductCollectListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		FA9A310C282F84AF00D39A66 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		FAEBF3532830D08900A9D491 /* TabBarControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarControler.swift; sourceTree = "<group>"; };
 		FAEBF3552830D78300A9D491 /* ProductCollectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectManager.swift; sourceTree = "<group>"; };
+		FAEBF35B283207A100A9D491 /* ProductCollectListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				FAEBF3552830D78300A9D491 /* ProductCollectManager.swift */,
 				FA410A9F282D41DE0099CBA8 /* RatingView.swift */,
 				FA9A310A282F81D700D39A66 /* NetworkAPI.swift */,
+				FAEBF35B283207A100A9D491 /* ProductCollectListVC.swift */,
 				FAEBF3532830D08900A9D491 /* TabBarControler.swift */,
 				FA5137B52830133D004DFAE2 /* CommentListCell.swift */,
 				FA9A310C282F84AF00D39A66 /* Product.swift */,
@@ -237,6 +240,7 @@
 				FA5137B828301D01004DFAE2 /* ProductDetailView.swift in Sources */,
 				FAEBF3562830D78300A9D491 /* ProductCollectManager.swift in Sources */,
 				FA7D9E912829088F006CD122 /* AppDelegate.swift in Sources */,
+				FAEBF35C283207A100A9D491 /* ProductCollectListVC.swift in Sources */,
 				FAEBF3542830D08900A9D491 /* TabBarControler.swift in Sources */,
 				FA5137B62830133D004DFAE2 /* CommentListCell.swift in Sources */,
 				FA410AA0282D41DE0099CBA8 /* RatingView.swift in Sources */,
