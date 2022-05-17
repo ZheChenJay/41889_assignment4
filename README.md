@@ -30,9 +30,9 @@ The contributor of this project:
 ### shopping app
 #### new function
 ##### version 1.0.0
-*Product list
-*Product detail
-*Favourite product collection
+* Product list
+* Product detail
+* Favourite product collection
 
 -----
 -----
