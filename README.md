@@ -89,13 +89,13 @@ The contribution of this project:
 | Zhe Chen        |  Zhe.Chen-3@student.uts.edu.au      | 	Design ideas, Product list page, Product detail page, Produck collection page, testing & debug,readme	        |
 | Yueyang Hong    |  Yueyang.Hong-1@student.uts.edu.au  | 	Design ideas, Product list page, Produck collection page, testing & debug,readme	        |
 | Longlei Guo     |  Longlei.Guo-1@student.uts.edu.au   | 	Design ideas, Product list page, Product detail page, testing & debug,readme	        |
-| Bingzhen He     |  Bingzhen.He-1@student.uts.edu.au   | 	Design ideas, Product list page, Product detail page, testing & debug	        |
+| Bingzhen He     |  Bingzhen.He-1@student.uts.edu.au   | 	Design ideas, Product list page, Product detail page, Json & image,testing & debug	        |
 
 -----
 ## The iterative direction
-*Implement shopping cart functionality by rewriting collection Page
-*Interface beautification
+* Implement shopping cart functionality by rewriting collection Page
+* Interface beautification
 	* UI design
 	* Animation
-*Safety and stability
-*Device Compatibility
+* Safety and stability
+* Device Compatibility
