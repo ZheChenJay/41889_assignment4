@@ -19,8 +19,7 @@ The contributor of this project:
 * [API](#API)
 * [Product Browsing](#Product-Browsing)
 * [Product Detailed Page](#Product-Detailed-Page)
-	* Product Evaluation Browsing
-	* [Product Collection](#Product-Collection)
+* [Product Collection](#Product-Collection)
 * [Development Cycle](#Development-Cycle)
 * [Contribution](#Contribution)
 * [The iterative direction](#The-iterative-direction)
