@@ -15,15 +15,15 @@ The contributor of this project:
 ## Table of Contents
 * [Version](#Version)
 * [Environment](#Environment)
-* [Package dependence](#Package dependence)
+* [Package dependence](#Package-dependence)
 * [API](#API)
-* [Product Browsing](#Product Browsing)
-* [Product Detailed Page](#Product Detailed Page)
+* [Product Browsing](#Product-Browsing)
+* [Product Detailed Page](#Product-Detailed-Page)
 	* Product Evaluation Browsing
-	* [Product Collection](#Product Collection)
-* [Development Cycle](#Development Cycle)
+	* [Product Collection](#Product-Collection)
+* [Development Cycle](#Development-Cycle)
 * [Contribution](#Contribution)
-* [The iterative direction](#The iterative direction)
+* [The iterative direction](#The-iterative-direction)
 
 -----
 
