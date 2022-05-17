@@ -28,7 +28,7 @@ The contributor of this project:
 
 ## Version
 ### shopping app
-####new function
+#### new function
 ##### version 1.0.0
 *Product list
 *Product detail
