@@ -13,14 +13,14 @@ The contributor of this project:
 -----
 
 ## Table of Contents
-*[Version](#Version)
-*[Environment](#Environment)
-*[Package dependence](#Package dependence)
-*[API](#API)
-	- [Product Browsing](#Product Browsing)
-	- [Product Detailed Page](#Product Detailed Page)
-		- Product Evaluation Browsing
-	- [Product Collection](#Product Collection)
+* [Version](#Version)
+* [Environment](#Environment)
+* [Package dependence](#Package dependence)
+* [API](#API)
+* [Product Browsing](#Product Browsing)
+* [Product Detailed Page](#Product Detailed Page)
+	* Product Evaluation Browsing
+	* [Product Collection](#Product Collection)
 - [Development Cycle](#Development Cycle)
 
 -----
