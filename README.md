@@ -1,6 +1,6 @@
 # 41889_assignment3
 
-This application is mainly a class of online shopping software interaction, based on achieving product browsing, product detailed page, product evaluation browsing, product collection and other functions.
+This application is mainly a class of online shopping software interaction, based on achieving product browsing, product detailed page, product comments browsing, product collection and other functions.
 
 The contributor of this project:
 | Student Name    |  Student Email                      |
