@@ -18,6 +18,7 @@ class ProductListVC: UIViewController {
     private var subscribeKey: String = ""
     
     deinit { ProductCollectManager.shared.unsubscribe(subscribeKey) }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
          
@@ -98,7 +99,6 @@ extension ProductListVC: UITableViewDataSource{
         cell.setName(product.name)
         cell.setRating(product.rating)
         cell.setPrice(product.price)
-        cell.setCollect(true)
         cell.setCollect(ProductCollectManager.shared.checkCollect(product))
         return cell
     }
@@ -117,6 +117,5 @@ extension ProductListVC: ProductListCellDelegate{
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         let product = list[indexPath.row]
         ProductCollectManager.shared.collectProduct(product)
-
     }
 }

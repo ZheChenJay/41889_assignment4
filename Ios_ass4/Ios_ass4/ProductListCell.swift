@@ -45,7 +45,7 @@ class ProductListCell: UITableViewCell {
             hStack.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 15),
             hStack.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15),
             hStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-//            hStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5), //if use autolayout 
+//            hStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5), //if use autolayout
             coverView.widthAnchor.constraint(equalToConstant: 100),
             coverView.heightAnchor.constraint(equalToConstant: 100)
         ])

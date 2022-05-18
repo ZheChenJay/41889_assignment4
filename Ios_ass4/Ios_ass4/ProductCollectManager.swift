@@ -25,7 +25,7 @@ class ProductCollectManager {
     
     private var dataUrl: URL {
         var url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        url.appendPathComponent("favouriteProduct.json")
+        url.appendPathComponent("FavouriteProducts.json")
         return url
     }
     
@@ -52,7 +52,7 @@ class ProductCollectManager {
             let list = self.loadDataSync()
             
             for product in list {
-                if newSet.contains(product.id){continue}
+                if newSet.contains(product.id) { continue }
                 newSet.insert(product.id)
                 newList.append(product)
             }
