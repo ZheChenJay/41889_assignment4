@@ -19,7 +19,7 @@ class TabBarControler: UITabBarController {
         
         let nc = UINavigationController(rootViewController: vc)
         
-        let vc2 = ProductListVC()
+        let vc2 = ProductCollectListVC()
         vc2.title = "Favorite"
         vc2.tabBarItem.image = UIImage(systemName: "heart")
         vc2.tabBarItem.selectedImage = UIImage(systemName: "herat fill")
@@ -27,7 +27,18 @@ class TabBarControler: UITabBarController {
         let nc2 = UINavigationController(rootViewController: vc2)
         
         viewControllers = [nc,nc2]
+        
+        delegate = self
     }
 
 
+}
+
+extension TabBarControler: UITabBarControllerDelegate {
+    func tabBarController(_ TabBarControler: UITabBarController, didSelect viewController: UIViewController){
+       if let nc = viewController as? UINavigationController,
+          let vc = nc.viewControllers.first as? ProductCollectListVC{
+           vc.refreshData()
+       }
+    }
 }
