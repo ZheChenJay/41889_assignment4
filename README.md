@@ -2,6 +2,8 @@
 
 This application is mainly a class of online shopping software interaction, based on achieving product browsing, product detailed page, product comments browsing, product collection and other functions.
 
+GitHub repo.:https://github.com/ZheChenJay/41889_assignment4
+
 The contributor of this project:
 | Student Name    |  Student Email                      |
 | :-------------  |  ---------------------------------: | 
