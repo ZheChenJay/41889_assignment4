@@ -69,7 +69,7 @@ class ProductCollectManager {
     }
     
     //collection saving is implemented through asynchronous functions
-    func collectProduct(_ product:Product){ //outer func
+    func collectProduct(_ product: Product){ //outer func
         if idSet.contains(product.id){
             idSet.remove(product.id)
             if let index = list.firstIndex(where: { $0.id == product.id}) {

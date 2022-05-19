@@ -102,6 +102,7 @@
 			children = (
 				FA7D9E902829088F006CD122 /* AppDelegate.swift */,
 				FA7D9E922829088F006CD122 /* SceneDelegate.swift */,
+				FAEBF3532830D08900A9D491 /* TabBarControler.swift */,
 				FA7D9E942829088F006CD122 /* ProductListVC.swift */,
 				FA51ACE1282FFAF50095C7E5 /* ProductDetailVC.swift */,
 				FA5137B728301D01004DFAE2 /* ProductDetailView.swift */,
@@ -111,7 +112,6 @@
 				FA410A9F282D41DE0099CBA8 /* RatingView.swift */,
 				FA9A310A282F81D700D39A66 /* NetworkAPI.swift */,
 				FAEBF35B283207A100A9D491 /* ProductCollectListVC.swift */,
-				FAEBF3532830D08900A9D491 /* TabBarControler.swift */,
 				FA5137B52830133D004DFAE2 /* CommentListCell.swift */,
 				FA9A310C282F84AF00D39A66 /* Product.swift */,
 				FA7D9E9928290891006CD122 /* Assets.xcassets */,
